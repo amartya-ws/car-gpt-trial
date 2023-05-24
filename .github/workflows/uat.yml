@@ -33,6 +33,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
+          cache-dependency-path: "/car-gpt-react-js-web/yarn.lock"
 
       - name: Install Dependencies
         run: yarn
