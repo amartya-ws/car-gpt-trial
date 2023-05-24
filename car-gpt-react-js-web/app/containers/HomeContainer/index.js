@@ -172,9 +172,9 @@ export function HomeContainer({
 
   return (
     <Container maxwidth={maxwidth} padding={padding}>
-      <RightContent>
+      {/* <RightContent>
         <StyledT onClick={handleStoriesClick} data-testid="redirect" id="stories" />
-      </RightContent>
+      </RightContent> */}
       <CustomCard maxwidth={maxwidth}>
         <CustomCardHeader title={translate('repo_search')} />
         <Divider sx={{ mb: 1.25 }} light />
