@@ -1,7 +1,10 @@
 name: AWS S3 Static Site Deploy
 on:
   pull_request:
-    branches: [master]
+    branches:
+      - main
+    paths:
+      - "car-gpt-react-js-web/**"
 jobs:
   aws_deply:
     name: Deploy to AWS
@@ -14,7 +17,7 @@ jobs:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_REGION: ${{ secrets.AWS_REGION }}
-      PATHS: '/*'
+      PATHS: "/*"
 
     steps:
       - name: Checkout
@@ -28,7 +31,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'yarn'
+          cache: "yarn"
 
       - name: Install Dependencies
         run: yarn
@@ -41,7 +44,7 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks
         env:
-          SOURCE_DIR: './build/'
+          SOURCE_DIR: "./build/"
           DEST_DIR: ${{ steps.vars.outputs.branch }}
 
       - name: List UAT branches in fallback page
@@ -51,5 +54,5 @@ jobs:
         with:
           args: --acl public-read --follow-symlinks --exclude 'tests/*'
         env:
-          SOURCE_DIR: './uat/'
-          DEST_DIR: ''
+          SOURCE_DIR: "./uat/"
+          DEST_DIR: ""
