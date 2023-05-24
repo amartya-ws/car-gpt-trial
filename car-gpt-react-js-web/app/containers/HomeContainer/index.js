@@ -172,7 +172,6 @@ export function HomeContainer({
 
   return (
     <Container maxwidth={maxwidth} padding={padding}>
-      <h2>test</h2>
       <RightContent>
         <StyledT onClick={handleStoriesClick} data-testid="redirect" id="stories" />
       </RightContent>
