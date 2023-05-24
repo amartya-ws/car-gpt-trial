@@ -26,22 +26,34 @@ jobs:
           cache-dependency-path: "car-gpt-react-js-web/yarn.lock"
 
       - name: Install dependencies
-        run: yarn
+        run: |
+          cd car-gpt-react-js-web/
+          yarn
 
       - name: Lint
-        run: yarn lint:ci
+        run: |
+          cd car-gpt-react-js-web/
+          yarn lint:ci
 
       - name: Test
-        run: yarn test
+        run: |
+          cd car-gpt-react-js-web/
+          yarn test
 
       - name: Accessibility tests using Storybook
-        run: yarn test-storybook:ci
+        run: |
+          cd car-gpt-react-js-web/
+          yarn test-storybook:ci
 
       - name: Build
-        run: yarn build:prod
+        run: |
+          cd car-gpt-react-js-web/
+          yarn build:prod
 
       - name: LHCI Benchmark
-        run: yarn lhci
+        run: |
+          cd car-gpt-react-js-web/
+          yarn lhci
 
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
