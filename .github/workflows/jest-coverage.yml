@@ -32,9 +32,7 @@ jobs:
           prop_path: "coverageThreshold.global.statements"
 
       - name: Install dependencies
-        run: |
-          cd car-gpt-react-js-web/
-          yarn
+        run: yarn
 
       - name: Test and generate coverage report
         uses: artiomtr/jest-coverage-report-action@v2.0-rc.4
