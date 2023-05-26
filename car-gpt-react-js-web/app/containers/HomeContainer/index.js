@@ -166,8 +166,8 @@ export function HomeContainer({
   };
 
   const handleStoriesClick = () => {
-    history.push('/stories');
     window.location.reload();
+    history.push('/stories');
   };
 
   return (
