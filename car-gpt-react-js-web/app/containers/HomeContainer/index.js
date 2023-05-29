@@ -23,8 +23,8 @@ import { translate } from '@app/utils/index';
 
 const CustomCard = styled(Card)`
   && {
-    margin: 1.25rem 0;
     padding: 1rem;
+    margin: 1.25rem 0;
     max-width: ${(props) => props.maxwidth};
     color: ${(props) => props.color};
     ${(props) => props.color && `color: ${props.color}`};
