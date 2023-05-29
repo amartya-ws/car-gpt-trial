@@ -2,9 +2,9 @@ name: CI car-gpt-react-js-web
 on:
   push:
     branches:
-      - develop
+      - main
+      - dev
       - qa
-      - master
     paths: "car-gpt-react-js-web/**"
 
   pull_request:

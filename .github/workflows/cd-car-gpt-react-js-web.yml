@@ -2,8 +2,8 @@ name: CD car-gpt-react-js-web
 on:
   push:
     branches:
-      - master
-      - develop
+      - main
+      - dev
       - qa
     paths: "car-gpt-react-js-web/**"
   workflow_dispatch:
